@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bookingstyle.css">
+  <link rel="icon" type="image/png" href="sports.png">
+  <title>Rent Form</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="home-page.html">Darb Alsaada sports</a></div>
+            <ul class="links">
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+            <a href="Booking.html" class="action_btn">Book now</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+  <div class="container">
+    <h2>Choose what you want to rent:</h2>
+    <form id="rentForm" action="https://api.web3forms.com/submit" method="POST">
+      <label for="rentOption">Select an option:</label>
+      <select id="rentOption" name="rentOption" onchange="showTiming()">
+        <option value="" disabled selected>Select an option</option>
+        <option value="football">Football Pitch</option>
+        <option value="basketball">Basketball Pitch</option>
+        <option value="swimming">Swimming Pool</option>
+        <option value="tennis">Tennis Court</option>
+      </select>
+
+      <p id="timingNote"></p>
+      <input type="hidden" name="access_key" value="8932c039-84fa-4949-9827-bd214400977a">
+      <input type="hidden" id="selectedOption" name="selectedOption" value="">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="number">Phone Number:</label>
+      <input type="tel" id="number" name="number" pattern="[0-9]{10}" required>
+      
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  
+  <section id="about">
+    <h2>About Us</h2>
+    <!-- Add your about us content here -->
+</section>
+
+  <script>
+    function showTiming() {
+      const rentOption = document.getElementById('rentOption');
+      const timingNote = document.getElementById('timingNote');
+      const selectedOption = document.getElementById('selectedOption');
+
+      let timingText = '';
+      switch (rentOption.value) {
+        case 'football':
+          timingText = 'Football pitch is available on weekdays from 5:00 PM to 8:00 PM.';
+          break;
+        case 'basketball':
+          timingText = 'Basketball pitch is available on weekends from 10:00 AM to 12:00 PM.';
+          break;
+        case 'swimming':
+          timingText = 'Swimming pool is open every day from 9:00 AM to 6:00 PM.';
+          break;
+        case 'tennis':
+          timingText = 'Tennis court is available on weekdays from 3:00 PM to 7:00 PM.';
+          break;
+        default:
+          timingText = '';
+      }
+
+      timingNote.textContent = timingText;
+      selectedOption.value = rentOption.value;
+    }
+  </script>
+</body>
+</html>

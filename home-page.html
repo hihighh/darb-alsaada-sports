@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="sports.png">
+    <title>Darb Alsaadah Sports</title>
+</head>
+<body>
+    <header>
+
+        <div class="navbar">
+            <div class="logo"><a href="home-page.html">Darb Alsaada sports</a></div>
+            <ul class="links">
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+            <a href="Booking.html" class="action_btn">Book now</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/+971558510049" target="_blank">
+            <img src="whatsapp-icon.png" alt="WhatsApp Icon">
+        </a>
+    </div>
+    <div class="slogun">
+        <h1>Elevate your game at Darb AlSaada.</h1>
+    </div>
+
+    <section class="slideshow-container">
+        <div class="slideshow-text">
+            <h2>Elevate your game at Darb AlSaada.</h2>
+            <a href="booking.html" class="book-now-button">Book Now</a>
+        </div>
+
+        <div class="mySlides">
+            <img src="pitch3.jpg" alt="Slide 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="pitch1.jpg" alt="Slide 3">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p class="services-description">We offer a variety of sports and recreational activities to cater to your interests:</p>
+        <div class="services-row">
+            <div class="service">
+                <img src="football.jpg" alt="Football">
+                <h3>Football</h3>
+                <p>Enjoy our well-maintained football pitches for exciting matches with friends or in leagues.</p>
+                <a href="Booking.html" class="book-now-button">Book Now</a>
+            </div>
+
+            <div class="service">
+                <img src="basketball.jpg" alt="Basketball">
+                <h3>Basketball</h3>
+                <p>Challenge yourself on our high-quality basketball courts suitable for casual games or competitive play.</p>
+                <a href="Booking.html" class="book-now-button">Book Now</a>
+            </div>
+
+            <div class="service">
+                <img src="swimming.jpg" alt="Swimming Pool">
+                <h3>Swimming Pool</h3>
+                <p>Cool off and relax in our refreshing swimming pool, perfect for both recreation and fitness.</p>
+                <a href="Booking.html" class="book-now-button">Book Now</a>
+            </div>
+
+            <div class="service">
+                <img src="tennis.jpg" alt="Tennis">
+                <h3>Tennis</h3>
+                <p>Improve your tennis skills on our well-maintained tennis courts, suitable for players of all levels.</p>
+                <a href="Booking.html" class="book-now-button">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p>What sets us apart is not just our facilities but the vibrant and inclusive community that thrives within our walls. Join us to connect with like-minded individuals, share unforgettable moments, and embark on a journey of fitness, fun, and friendship.</p>
+    
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Feel free to reach out to us!</p>
+            
+            <div class="contact-icons">
+                <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="whatsapp-about.png" alt="WhatsApp Icon"></a>
+                <a href="mailto:darbalsaadasports@gmail.com" target="_blank"><img src="mail-about.png" alt="Email Icon"></a>
+                <a href="https://www.instagram.com/darbalsaada_sports/" target="_blank"><img src="instagram-about.png" alt="Instagram Icon"></a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Darb Alsaadah Sports</p>
+    </footer>
+</body>
+</html>
